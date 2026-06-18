@@ -14,6 +14,8 @@ import {
 export const business = {
   name: "Rashi Labs",
   tagline: "Complete Laboratory Solutions",
+  establishedYear: 2026,
+  email: "rashilabsbengaluru@gmail.com",
   phoneDisplay: "+91 80883 82683",
   phoneHref: "+918088382683",
   whatsappUrl: "https://wa.me/918088382683",
@@ -56,14 +58,14 @@ export const services: Service[] = [
     title: "School & College Lab Setup",
     shortTitle: "Educational Lab Setup",
     description:
-      "Planning and setup support for functional science laboratories in schools, colleges and training centres.",
+      "Supply and setup support for functional science laboratories in schools, colleges and training centres.",
     details:
-      "From initial requirement discussions to layout planning, equipment selection and setup coordination, the goal is to create a practical laboratory that is easy to use, maintain and expand.",
+      "From initial requirement discussions to layout planning, furniture and equipment supply, utility coordination and setup support, the goal is to create a practical laboratory that is easy to use, maintain and expand.",
     points: [
       "Requirement and space assessment",
       "Workstation and storage planning",
-      "Equipment and utility coordination",
-      "Handover and basic usage guidance",
+      "Furniture and equipment supply",
+      "Setup coordination and handover guidance",
     ],
     icon: Building2,
     accent: "blue",
@@ -73,12 +75,12 @@ export const services: Service[] = [
     title: "Chemistry Lab Solutions",
     shortTitle: "Chemistry Labs",
     description:
-      "Purposeful chemistry laboratory planning with attention to workflow, storage, utilities and safety.",
+      "Purposeful chemistry laboratory setup with attention to workflow, storage, utilities and safety.",
     details:
-      "Chemistry labs need clear zones for preparation, experimentation, washing and storage. Rashi Labs supports practical layouts and equipment planning for educational and small-scale laboratory needs.",
+      "Chemistry labs need clear zones for preparation, experimentation, washing and storage. Rashi Labs supplies and coordinates practical furniture, utilities, glassware and equipment for educational and small-scale laboratory needs.",
     points: [
       "Experiment work areas",
-      "Chemical and glassware storage planning",
+      "Chemical and glassware storage",
       "Wash and utility zone coordination",
       "Safety-conscious workflow",
     ],
@@ -88,11 +90,11 @@ export const services: Service[] = [
   {
     slug: "science-lab-setup",
     title: "Physics & Biology Lab Setup",
-    shortTitle: "Science Labs",
+    shortTitle: "Physics & Biology Labs",
     description:
       "Dedicated laboratory solutions for observation, measurement, demonstrations and practical learning.",
     details:
-      "The setup can be adapted for physics demonstrations, biological observation and foundational science activities, with suitable work surfaces, storage and equipment access.",
+      "The setup can be adapted for physics demonstrations, biological observation and foundational science activities, with suitable work surfaces, storage, instruments and equipment access.",
     points: [
       "Flexible practical workstations",
       "Instrument and specimen storage",
@@ -109,7 +111,7 @@ export const services: Service[] = [
     description:
       "A shared science space designed to support chemistry, physics and biology activities efficiently.",
     details:
-      "For institutions working with limited space, a composite lab can bring multiple science disciplines into one organised room. The design focuses on adaptable work areas and well-planned storage.",
+      "For institutions working with limited space, a composite lab can bring multiple science disciplines into one organised room. The setup focuses on adaptable work areas, shared utilities and well-planned storage.",
     points: [
       "Multi-subject layout planning",
       "Shared equipment organisation",
@@ -120,21 +122,142 @@ export const services: Service[] = [
     accent: "orange",
   },
   {
+    slug: "chemical-microbiology-lab",
+    title: "Chemical & Microbiology Lab Setup",
+    shortTitle: "Chemical & Microbiology",
+    description:
+      "Specialised setup support for chemical testing, sample preparation and microbiology workspaces.",
+    details:
+      "Rashi Labs supports the supply and setup of workstations, storage, utility points and selected equipment for chemical and microbiology laboratory requirements.",
+    points: [
+      "Sample preparation work areas",
+      "Dedicated storage planning",
+      "Utility and equipment coordination",
+      "Easy-to-maintain layouts",
+    ],
+    icon: Beaker,
+    accent: "teal",
+  },
+  {
+    slug: "stem-robotics-ai-lab",
+    title: "STEM, Robotics & AI Lab Setup",
+    shortTitle: "STEM, Robotics & AI",
+    description:
+      "Flexible technology-learning spaces for STEM activities, robotics projects and AI-based learning.",
+    details:
+      "These spaces are planned around collaborative work, device access, project storage, demonstrations and practical student engagement.",
+    points: [
+      "Collaborative project tables",
+      "Power and device planning",
+      "Component and project storage",
+      "Demonstration-friendly arrangement",
+    ],
+    icon: Atom,
+    accent: "orange",
+  },
+  {
+    slug: "mathematics-computer-lab",
+    title: "Mathematics & Computer Lab Setup",
+    shortTitle: "Maths & Computer Labs",
+    description:
+      "Organised learning spaces for mathematics activities, digital learning and computer-based instruction.",
+    details:
+      "Rashi Labs supports practical workstation layouts, furniture supply, cable planning, storage and classroom organisation for mathematics and computer laboratories.",
+    points: [
+      "Computer workstation planning",
+      "Cable and power coordination",
+      "Mathematics activity areas",
+      "Storage and classroom organisation",
+    ],
+    icon: BookOpenCheck,
+    accent: "blue",
+  },
+  {
+    slug: "library-setup",
+    title: "Library Setup",
+    shortTitle: "Library Setup",
+    description:
+      "Functional library spaces with practical shelving, reading areas, storage and circulation planning.",
+    details:
+      "Library setup support can include shelving arrangements, reading tables, storage units and space planning suited to the institution and available area.",
+    points: [
+      "Shelving and storage supply",
+      "Reading-area planning",
+      "Space-efficient circulation",
+      "Institution-focused setup",
+    ],
+    icon: BookOpenCheck,
+    accent: "teal",
+  },
+  {
+    slug: "fire-hydrant-line-support",
+    title: "Fire Hydrant Line Support",
+    shortTitle: "Fire Hydrant Support",
+    description:
+      "Coordination support for fire-hydrant line requirements as part of institutional setup projects.",
+    details:
+      "Where required, Rashi Labs can coordinate fire-hydrant line work through suitable technical partners as part of a broader laboratory or institutional setup requirement.",
+    points: [
+      "Requirement discussion",
+      "Technical coordination",
+      "Integration with setup work",
+      "Partner-supported execution",
+    ],
+    icon: ShieldCheck,
+    accent: "orange",
+  },
+  {
     slug: "industrial-lab-support",
     title: "Industrial Lab Support",
     shortTitle: "Industrial Solutions",
     description:
-      "Practical setup and improvement support for small industrial and quality-control laboratory spaces.",
+      "Practical supply, setup and improvement support for smaller industrial and quality-control laboratories.",
     details:
-      "Rashi Labs can assist with basic planning, workstation organisation, utility coordination and equipment placement for small industrial laboratory environments.",
+      "Rashi Labs can assist with workstation supply, storage organisation, utility coordination and equipment placement for compact industrial laboratory environments.",
     points: [
       "Workflow-based space planning",
-      "Workstation and storage support",
+      "Workstation and storage supply",
       "Equipment placement coordination",
       "Maintainable layout recommendations",
     ],
     icon: Wrench,
     accent: "teal",
+  },
+];
+
+export const productCategories = [
+  "Laboratory work tables and island benches",
+  "Wall benches, sinks and utility fittings",
+  "Storage cabinets, reagent racks and shelving",
+  "Laboratory stools and practical accessories",
+  "Glassware, instruments and laboratory equipment",
+  "Furniture for science, computer and library spaces",
+];
+
+export const qualityCommitments = [
+  {
+    title: "Quality materials",
+    description:
+      "Furniture, work surfaces and supplied components are selected for practical, regular laboratory use.",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Reliable supply & setup",
+    description:
+      "Requirements are coordinated from planning and product supply through installation and basic handover.",
+    icon: Wrench,
+  },
+  {
+    title: "Purpose-led planning",
+    description:
+      "Layouts, storage and equipment are recommended around the actual users, subjects and workflow.",
+    icon: Beaker,
+  },
+  {
+    title: "Ongoing support",
+    description:
+      "Rashi Labs remains available for additions, replacement requirements and future improvements.",
+    icon: Building2,
   },
 ];
 
@@ -169,22 +292,22 @@ export const processSteps = [
   {
     step: "01",
     title: "Understand",
-    description: "Discuss the purpose, users, space, experiments and expected outcome.",
+    description: "Discuss the purpose, users, space, subjects, products and expected outcome.",
   },
   {
     step: "02",
     title: "Plan",
-    description: "Prepare a practical layout, equipment approach and implementation plan.",
+    description: "Prepare a practical layout, supply approach and implementation plan.",
   },
   {
     step: "03",
-    title: "Set up",
-    description: "Coordinate the required workstations, storage, utilities and equipment.",
+    title: "Supply & set up",
+    description: "Coordinate the required furniture, storage, utilities, equipment and setup work.",
   },
   {
     step: "04",
     title: "Support",
-    description: "Provide basic handover guidance and help with future improvements.",
+    description: "Provide basic handover guidance and help with additions or future improvements.",
   },
 ];
 

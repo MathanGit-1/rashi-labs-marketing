@@ -1,4 +1,4 @@
-import { ArrowUpRight, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { Link } from "react-router-dom";
 import { business, services } from "./data/siteContent";
 
@@ -25,10 +25,11 @@ const Footer = () => {
             </div>
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600">
-            Student-friendly practical laboratory access and complete laboratory solutions for educational and smaller industrial requirements.
+            Established in {business.establishedYear}, Rashi Labs provides practical-learning support and complete laboratory product supply and setup services in Bengaluru.
           </p>
-          <div className="mt-5 text-xs font-semibold text-slate-500">
-            GSTIN: {business.gst}
+          <div className="mt-5 space-y-1 text-xs font-semibold text-slate-500">
+            <div>{business.association}</div>
+            <div>GSTIN: {business.gst}</div>
           </div>
         </div>
 
@@ -45,7 +46,7 @@ const Footer = () => {
         <div>
           <h3 className="footer-title">Services</h3>
           <div className="mt-5 space-y-3 text-sm">
-            {services.slice(0, 5).map((service) => (
+            {services.slice(0, 6).map((service) => (
               <Link
                 key={service.slug}
                 className="footer-link"
@@ -60,6 +61,10 @@ const Footer = () => {
         <div>
           <h3 className="footer-title">Contact</h3>
           <div className="mt-5 space-y-4 text-sm text-slate-600">
+            <a href={`mailto:${business.email}`} className="flex gap-3 transition hover:text-ink">
+              <Mail size={18} className="mt-0.5 shrink-0 text-teal-dark" />
+              <span className="break-all">{business.email}</span>
+            </a>
             <a href={`tel:${business.phoneHref}`} className="flex gap-3 transition hover:text-ink">
               <Phone size={18} className="mt-0.5 shrink-0 text-orange" />
               <span>{business.phoneDisplay}</span>

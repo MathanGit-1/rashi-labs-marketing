@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { Building2, MapPin, MessageCircle, Phone, Send } from "lucide-react";
+import { Building2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import PageHero from "../components/PageHero";
 import { business, services } from "../data/siteContent";
 
@@ -29,7 +29,7 @@ const ContactPage = () => {
       <PageHero
         eyebrow="Contact"
         title="Share your laboratory or practical-learning requirement."
-        description="Call, visit or send the details through WhatsApp. Rashi Labs will review the requirement and help with the next step."
+        description="Call, email, visit or send the details through WhatsApp. Rashi Labs will review the requirement and help with the next step."
       />
 
       <section className="section-space bg-white">
@@ -45,6 +45,22 @@ const ContactPage = () => {
               </a>
               <p className="mt-2 text-sm leading-6 text-slate-500">
                 Use this number for laboratory enquiries, visits and project discussions.
+              </p>
+            </div>
+
+            <div className="rounded-3xl border border-line bg-canvas p-6 sm:p-7">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-mist text-teal-dark">
+                <Mail size={23} />
+              </div>
+              <h2 className="mt-5 font-display text-xl font-extrabold text-ink">Email Rashi Labs</h2>
+              <a
+                href={`mailto:${business.email}`}
+                className="mt-2 block break-all text-base font-extrabold text-teal-dark hover:text-ink"
+              >
+                {business.email}
+              </a>
+              <p className="mt-2 text-sm leading-6 text-slate-500">
+                Share product lists, room details, drawings or institutional requirements by email.
               </p>
             </div>
 
@@ -69,9 +85,11 @@ const ContactPage = () => {
                 <Building2 size={23} />
               </div>
               <h2 className="mt-5 font-display text-xl font-extrabold text-ink">Business information</h2>
-              <p className="mt-2 text-sm text-slate-600">
-                <strong className="text-ink">GSTIN:</strong> {business.gst}
-              </p>
+              <div className="mt-2 space-y-2 text-sm text-slate-600">
+                <p><strong className="text-ink">Established:</strong> {business.establishedYear}</p>
+                <p><strong className="text-ink">Association:</strong> {business.association}</p>
+                <p><strong className="text-ink">GSTIN:</strong> {business.gst}</p>
+              </div>
             </div>
           </div>
 

@@ -3,7 +3,7 @@ import { CheckCircle2, Compass, FlaskConical, HeartHandshake, ShieldCheck } from
 import CallToAction from "../components/CallToAction";
 import PageHero from "../components/PageHero";
 import SectionHeading from "../components/SectionHeading";
-import { processSteps, strengths } from "../data/siteContent";
+import { business, processSteps, strengths } from "../data/siteContent";
 
 const AboutPage = () => {
   return (
@@ -11,7 +11,7 @@ const AboutPage = () => {
       <PageHero
         eyebrow="About us"
         title="Practical science learning supported by thoughtful laboratory solutions."
-        description="Rashi Labs is a Bengaluru-based laboratory initiative focused on hands-on student learning and useful educational and industrial lab support."
+        description={`Established in ${business.establishedYear}, Rashi Labs is a Bengaluru-based laboratory solutions provider focused on practical science learning and complete laboratory supply and setup support.`}
       />
 
       <section className="section-space bg-white">
@@ -32,19 +32,19 @@ const AboutPage = () => {
             transition={{ duration: 0.55 }}
           >
             <SectionHeading
-              eyebrow="Our purpose"
-              title="Helping learners experience science instead of only reading about it."
-              description="The idea behind Rashi Labs is to make practical science more approachable. Students should be able to see reactions, handle instruments, make observations and connect those experiences to what they learn in class."
+              eyebrow={`Established in ${business.establishedYear}`}
+              title="Practical learning backed by complete laboratory supply and setup support."
+              description="Rashi Labs helps students experience science directly while supporting institutions with the furniture, equipment, storage, utilities and setup coordination needed for functional learning spaces."
             />
             <p className="mt-5 text-base leading-8 text-slate-600">
-              The same practical mindset is applied to laboratory setup work. A useful lab should have the right work areas, organised storage, sensible movement and equipment selected for its actual purpose.
+              Rashi Labs supports school, college, chemistry, physics, biology, chemical, microbiology, composite, STEM, robotics, AI, mathematics, computer and library requirements. We provide practical planning, product supply, setup coordination and ongoing support for functional learning and laboratory spaces.
             </p>
             <div className="mt-7 space-y-3">
               {[
-                "Hands-on, guided practical exposure",
-                "Clear and student-friendly environment",
-                "Purpose-based lab planning",
-                "Support for educational and industrial needs",
+                "Hands-on student practical sessions",
+                "Complete educational and science lab setup",
+                "Technology, computer and library spaces",
+                "Furniture, equipment and utility supply",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3 text-sm font-bold text-ink">
                   <CheckCircle2 size={19} className="text-teal-dark" />

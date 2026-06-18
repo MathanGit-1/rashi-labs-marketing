@@ -1,4 +1,4 @@
-import { ChevronDown, Menu, MessageCircle, Phone, X } from "lucide-react";
+import { ChevronDown, Mail, Menu, MessageCircle, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { business, services } from "./data/siteContent";
@@ -41,7 +41,11 @@ const Navbar = () => {
           <span className="font-medium text-slate-300">
             Educational & industrial laboratory solutions in Bengaluru
           </span>
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-4">
+            <a href={`mailto:${business.email}`} className="flex items-center gap-1.5 hover:text-orange">
+              <Mail size={13} />
+              {business.email}
+            </a>
             <a href={`tel:${business.phoneHref}`} className="flex items-center gap-1.5 hover:text-orange">
               <Phone size={13} />
               {business.phoneDisplay}
@@ -99,7 +103,7 @@ const Navbar = () => {
               Services
               <ChevronDown size={15} className="transition group-hover:rotate-180" />
             </NavLink>
-            <div className="pointer-events-none absolute left-1/2 top-full w-[580px] -translate-x-1/2 translate-y-3 pt-4 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="pointer-events-none absolute left-1/2 top-full w-[860px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-3 pt-4 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
               <div className="rounded-3xl border border-line bg-white p-5 shadow-matte">
                 <div className="mb-3 flex items-center justify-between px-2">
                   <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
@@ -109,7 +113,7 @@ const Navbar = () => {
                     View all services
                   </Link>
                 </div>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-3 gap-2">
                   {services.map((service) => {
                     const Icon = service.icon;
                     return (
@@ -170,7 +174,7 @@ const Navbar = () => {
 
       <div
         className={`overflow-hidden border-t border-line bg-white transition-all duration-300 lg:hidden ${
-          mobileOpen ? "max-h-[720px] opacity-100" : "max-h-0 border-transparent opacity-0"
+          mobileOpen ? "max-h-[900px] opacity-100" : "max-h-0 border-transparent opacity-0"
         }`}
       >
         <div className="site-container py-4">

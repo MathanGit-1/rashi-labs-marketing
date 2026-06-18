@@ -226,7 +226,7 @@ const HeroSlider = () => {
             animate="center"
             exit="exit"
             transition={{
-              duration: 2.2,
+              duration: 1.35,
               ease: [0.45, 0, 0.2, 1],
             }}
             className="absolute inset-0 h-full w-full object-cover will-change-transform"
@@ -249,7 +249,7 @@ const HeroSlider = () => {
               animate="center"
               exit="exit"
               transition={{
-                duration: 0.9,
+                duration: 0.55,
                 ease: [0.45, 0, 0.2, 1],
               }}
               className="w-full max-w-[690px]"
@@ -260,11 +260,10 @@ const HeroSlider = () => {
                   {activeSlide.eyebrow}
                 </div>
 
-                <h1 className="mt-6 min-h-[132px] max-w-[620px] font-display text-[2.55rem] font-extrabold leading-[1.16] text-ink sm:min-h-[154px] sm:text-5xl lg:min-h-[196px] lg:text-[3.65rem]">
+                <h1 className="mt-6 min-h-[132px] max-w-[620px] font-display text-[2.55rem] font-extrabold leading-tight text-ink sm:min-h-[154px] sm:text-5xl lg:min-h-[196px] lg:text-[3.65rem]">
                   {activeSlide.title}{" "}
-                  <span className="relative inline-block text-teal-dark">
+                  <span className="text-teal-dark">
                     {activeSlide.highlight}
-                    <span className="absolute -bottom-1 left-0 h-1.5 w-full rounded-full bg-orange/75" />
                   </span>
                 </h1>
 

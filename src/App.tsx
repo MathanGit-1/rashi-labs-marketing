@@ -32,7 +32,7 @@ const App = () => {
     <>
       <HeroSlider />
 
-        <section className="section-space overflow-hidden border-y border-line bg-[#F5FAFC]">
+        <section className="section-space overflow-hidden border-y border-line bg-[#EAF3F5]">
           <div className="site-container">
             <motion.div
               {...reveal}
@@ -42,7 +42,7 @@ const App = () => {
                 What Rashi Labs brings together
               </div>
 
-              <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.32] text-ink sm:text-4xl lg:text-[2.7rem]">
+              <h2 className="mt-6 font-display text-3xl font-extrabold leading-snug text-ink sm:text-4xl lg:text-[2.7rem]">
                 Practical learning, laboratory setup and{" "}
                 <span className="bg-gradient-to-r from-teal-dark to-orange bg-clip-text text-transparent">
                   local support.
@@ -211,7 +211,7 @@ const App = () => {
         </div>
         </section>
 
-<section className="section-space bg-canvas">
+<section className="section-space border-y border-line bg-[#EEF5F6]">
   <div className="site-container">
     <SectionHeading
       eyebrow="Our services"
@@ -286,7 +286,7 @@ const App = () => {
         </div>
       </section>
 
-      <section className="section-space bg-white">
+      <section className="section-space border-y border-line bg-[#EAF3F5]">
         <div className="site-container grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <motion.div {...reveal}>
             <SectionHeading
@@ -307,7 +307,7 @@ const App = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.45, delay: index * 0.07 }}
-                className="rounded-3xl border border-line bg-canvas p-6"
+                className="rounded-3xl border border-line bg-white p-6"
               >
                 <div className="text-sm font-black tracking-[0.14em] text-orange">{item.step}</div>
                 <h3 className="mt-4 font-display text-xl font-extrabold text-ink">{item.title}</h3>

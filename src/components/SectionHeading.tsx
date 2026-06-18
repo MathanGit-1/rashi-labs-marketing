@@ -29,7 +29,7 @@ const SectionHeading = ({
       >
         {eyebrow}
       </div>
-      <h2 className={`font-display text-3xl font-extrabold leading-[1.32] sm:text-4xl lg:text-[2.7rem] ${light ? "text-white" : "text-ink"}`}>
+      <h2 className={`font-display text-3xl font-extrabold leading-snug sm:text-4xl lg:text-[2.7rem] ${light ? "text-white" : "text-ink"}`}>
         {title}
       </h2>
       {description ? (

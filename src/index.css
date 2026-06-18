@@ -1,0 +1,210 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body,
+  #root {
+    width: 100%;
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    overflow-x: hidden;
+    background: #ffffff;
+    color: #0d2b5a;
+    font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  img,
+  svg,
+  video,
+  canvas {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background: rgba(54, 169, 181, 0.23);
+    color: #0d2b5a;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-7 lg:px-8;
+  }
+
+  .section-space {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 py-3 text-sm font-extrabold transition duration-200 focus:outline-none focus:ring-4 focus:ring-teal/15;
+  }
+
+  .button-primary {
+    @apply bg-ink text-white shadow-[0_10px_25px_rgba(13,43,90,0.16)] hover:-translate-y-0.5 hover:bg-ink-soft;
+  }
+
+  .button-orange {
+    @apply bg-orange text-white shadow-[0_10px_25px_rgba(242,138,26,0.18)] hover:-translate-y-0.5 hover:bg-[#DA7710];
+  }
+
+  .button-outline {
+    @apply border border-line bg-white text-ink hover:-translate-y-0.5 hover:border-teal/40 hover:bg-mist;
+  }
+
+  .button-light {
+    @apply border border-white/20 bg-white/10 text-white hover:bg-white/15;
+  }
+
+  .nav-link {
+    @apply relative py-2 text-sm font-bold text-slate-600 transition hover:text-ink;
+  }
+
+  .nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-0 rounded-full bg-teal transition-all duration-200;
+  }
+
+  .nav-link:hover::after,
+  .nav-link-active::after {
+    @apply w-full;
+  }
+
+  .nav-link-active {
+    @apply text-ink;
+  }
+
+  .service-card {
+    @apply rounded-3xl border border-line bg-white p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:border-teal/30 hover:shadow-matte sm:p-7;
+  }
+
+  .service-icon {
+    @apply flex items-center justify-center rounded-2xl;
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  .service-icon-blue {
+    @apply bg-[#EAF0F8] text-ink;
+  }
+
+  .service-icon-teal {
+    @apply bg-mist text-teal-dark;
+  }
+
+  .service-icon-orange {
+    @apply bg-[#FFF1E1] text-orange;
+  }
+
+  .service-illustration {
+    @apply flex h-36 w-36 items-center justify-center rounded-[2rem] border bg-white shadow-card;
+  }
+
+  .service-illustration-blue {
+    @apply border-ink/10 text-ink;
+  }
+
+  .service-illustration-teal {
+    @apply border-teal/20 text-teal-dark;
+  }
+
+  .service-illustration-orange {
+    @apply border-orange/20 text-orange;
+  }
+
+  .service-detail-visual {
+    @apply flex min-h-[300px] items-center justify-center rounded-4xl border;
+  }
+
+  .service-detail-visual-blue {
+    @apply border-ink/10 bg-[#EAF0F8] text-ink;
+  }
+
+  .service-detail-visual-teal {
+    @apply border-teal/20 bg-mist text-teal-dark;
+  }
+
+  .service-detail-visual-orange {
+    @apply border-orange/20 bg-[#FFF1E1] text-orange;
+  }
+
+  .gallery-card {
+    @apply relative aspect-[4/3] overflow-hidden rounded-3xl bg-mist shadow-card;
+  }
+
+  .gallery-overlay {
+    @apply absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/95 via-ink/65 to-transparent px-6 pb-5 pt-16;
+  }
+
+  .footer-title {
+    @apply font-display text-sm font-extrabold uppercase tracking-[0.14em] text-ink;
+  }
+
+  .footer-link {
+    @apply block text-slate-600 transition hover:translate-x-0.5 hover:text-teal-dark;
+  }
+
+  .form-label {
+    @apply block text-sm font-bold text-ink;
+  }
+
+  .form-input {
+    @apply mt-2 w-full rounded-xl border border-line bg-white px-4 py-3.5 text-sm font-medium text-ink outline-none transition placeholder:text-slate-400 focus:border-teal focus:ring-4 focus:ring-teal/10;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes hero-progress {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.hero-progress-fill {
+  transform-origin: left center;
+  animation-name: hero-progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}

@@ -256,16 +256,15 @@ const HeroSlider = () => {
               aria-live="polite"
             >
               <div className="flex min-h-[650px] flex-col rounded-[2rem] border border-white/80 bg-white/[0.86] p-6 shadow-[0_28px_70px_rgba(13,43,90,0.16)] backdrop-blur-md sm:min-h-[590px] sm:p-8 lg:min-h-[610px] lg:p-10">
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-teal/20 bg-mist/90 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-teal-dark">
-                  <span className="h-2 w-2 rounded-full bg-orange" />
+                <div className="inline-flex w-fit items-center rounded-full border border-teal/20 bg-mist/90 px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-teal-dark">
                   {activeSlide.eyebrow}
                 </div>
 
-                <h1 className="mt-6 min-h-[132px] max-w-[620px] font-display text-[2.55rem] font-extrabold leading-[1.06] text-ink sm:min-h-[154px] sm:text-5xl lg:min-h-[196px] lg:text-[3.65rem]">
+                <h1 className="mt-6 min-h-[132px] max-w-[620px] font-display text-[2.55rem] font-extrabold leading-[1.16] text-ink sm:min-h-[154px] sm:text-5xl lg:min-h-[196px] lg:text-[3.65rem]">
                   {activeSlide.title}{" "}
                   <span className="relative inline-block text-teal-dark">
                     {activeSlide.highlight}
-                    <span className="absolute -bottom-1 left-0 h-1.5 w-[70%] rounded-full bg-orange/75" />
+                    <span className="absolute -bottom-1 left-0 h-1.5 w-full rounded-full bg-orange/75" />
                   </span>
                 </h1>
 

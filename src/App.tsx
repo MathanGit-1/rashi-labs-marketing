@@ -38,12 +38,11 @@ const App = () => {
               {...reveal}
               className="max-w-[820px]"
             >
-              <div className="inline-flex items-center gap-2 rounded-full border border-teal/20 bg-white px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-teal-dark shadow-[0_8px_22px_rgba(13,43,90,0.05)]">
-                <span className="h-2 w-2 rounded-full bg-orange" />
+              <div className="inline-flex items-center rounded-full border border-teal/20 bg-white px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-teal-dark shadow-[0_8px_22px_rgba(13,43,90,0.05)]">
                 What Rashi Labs brings together
               </div>
 
-              <h2 className="mt-6 font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl lg:text-[2.7rem]">
+              <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.32] text-ink sm:text-4xl lg:text-[2.7rem]">
                 Practical learning, laboratory setup and{" "}
                 <span className="bg-gradient-to-r from-teal-dark to-orange bg-clip-text text-transparent">
                   local support.
@@ -121,7 +120,6 @@ const App = () => {
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="inline-flex rounded-full border border-line bg-white px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[0.14em] text-teal-dark transition duration-300 group-hover:border-teal/35 group-hover:bg-mist">
-                        <span className="mr-2 mt-1 h-1.5 w-1.5 rounded-full bg-orange" />
                         {item.eyebrow}
                       </div>
 

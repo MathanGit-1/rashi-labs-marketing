@@ -13,7 +13,9 @@ type PageHeroProps = {
     | "discovery"
     | "composite"
     | "microbiology"
-    | "technology";
+    | "technology"
+    | "safety"
+    | "industrial";
 };
 
 const PageHero = ({
@@ -29,6 +31,8 @@ const PageHero = ({
   const composite = tone === "composite";
   const microbiology = tone === "microbiology";
   const technology = tone === "technology";
+  const safety = tone === "safety";
+  const industrial = tone === "industrial";
 
   const darkText =
     dark ||
@@ -37,29 +41,59 @@ const PageHero = ({
     discovery ||
     composite ||
     microbiology ||
-    technology;
+    technology ||
+    safety ||
+    industrial;
 
   return (
     <section
       className={`relative overflow-hidden border-b pt-32 pb-16 sm:pt-36 sm:pb-20 ${
-        technology
-          ? "border-white/10 bg-[linear-gradient(135deg,#07152E_0%,#253B78_48%,#087273_100%)]"
-          : microbiology
-            ? "border-white/10 bg-[linear-gradient(135deg,#07152A_0%,#29365F_45%,#087069_100%)]"
-            : composite
-              ? "border-white/10 bg-[linear-gradient(135deg,#07182F_0%,#17466D_48%,#08746F_100%)]"
-              : discovery
-                ? "border-white/10 bg-[linear-gradient(135deg,#07162F_0%,#283D7A_48%,#08736F_100%)]"
-                : chemistry
-                  ? "border-white/10 bg-[linear-gradient(135deg,#06172F_0%,#0B3854_45%,#087078_100%)]"
-                  : science
-                    ? "border-white/10 bg-[linear-gradient(135deg,#061B3A_0%,#123A70_48%,#08727D_100%)]"
-                    : dark
-                      ? "border-white/10 bg-[linear-gradient(135deg,#071F46_0%,#0D3566_48%,#075966_100%)]"
-                      : "border-line bg-[linear-gradient(135deg,#E7F4F6_0%,#F1F7F9_55%,#FFF3E5_100%)]"
+        industrial
+          ? "border-white/10 bg-[linear-gradient(135deg,#08151F_0%,#17414C_48%,#3C665C_100%)]"
+          : safety
+            ? "border-white/10 bg-[linear-gradient(135deg,#07152B_0%,#4D263D_48%,#A54128_100%)]"
+            : technology
+            ? "border-white/10 bg-[linear-gradient(135deg,#07152E_0%,#253B78_48%,#087273_100%)]"
+            : microbiology
+              ? "border-white/10 bg-[linear-gradient(135deg,#07152A_0%,#29365F_45%,#087069_100%)]"
+              : composite
+                ? "border-white/10 bg-[linear-gradient(135deg,#07182F_0%,#17466D_48%,#08746F_100%)]"
+                : discovery
+                  ? "border-white/10 bg-[linear-gradient(135deg,#07162F_0%,#283D7A_48%,#08736F_100%)]"
+                  : chemistry
+                    ? "border-white/10 bg-[linear-gradient(135deg,#06172F_0%,#0B3854_45%,#087078_100%)]"
+                    : science
+                      ? "border-white/10 bg-[linear-gradient(135deg,#061B3A_0%,#123A70_48%,#08727D_100%)]"
+                      : dark
+                        ? "border-white/10 bg-[linear-gradient(135deg,#071F46_0%,#0D3566_48%,#075966_100%)]"
+                        : "border-line bg-[linear-gradient(135deg,#E7F4F6_0%,#F1F7F9_55%,#FFF3E5_100%)]"
       }`}
     >
-      {technology ? (
+      {industrial ? (
+        <>
+          <div className="absolute -right-24 -top-28 h-[30rem] w-[30rem] rounded-full bg-[#5DC7B5]/20 blur-3xl" />
+          <div className="absolute -left-28 bottom-[-10rem] h-80 w-80 rounded-full bg-orange/20 blur-3xl" />
+          <div className="absolute left-[43%] top-4 h-72 w-72 rounded-full bg-[#7A9FA3]/15 blur-3xl" />
+
+          <div className="absolute right-[9%] top-12 h-28 w-28 rounded-3xl border border-[#9AD8CC]/20" />
+          <div className="absolute right-[5%] top-7 h-52 w-52 rotate-12 rounded-[2.5rem] border border-white/10" />
+          <div className="absolute right-[18%] top-44 h-14 w-14 -rotate-12 rounded-2xl border border-orange/25" />
+
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:36px_36px]" />
+        </>
+      ) : safety ? (
+        <>
+          <div className="absolute -right-24 -top-28 h-[30rem] w-[30rem] rounded-full bg-orange/30 blur-3xl" />
+          <div className="absolute -left-28 bottom-[-10rem] h-80 w-80 rounded-full bg-[#D94A40]/25 blur-3xl" />
+          <div className="absolute left-[43%] top-4 h-72 w-72 rounded-full bg-[#F5A742]/15 blur-3xl" />
+
+          <div className="absolute right-[9%] top-12 h-28 w-28 rounded-full border border-orange/25" />
+          <div className="absolute right-[5%] top-7 h-52 w-52 rounded-full border border-white/10" />
+          <div className="absolute right-[18%] top-44 h-14 w-14 rounded-full border border-[#FFB36A]/30" />
+
+          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:38px_38px]" />
+        </>
+      ) : technology ? (
         <>
           <div className="absolute -right-24 -top-28 h-[30rem] w-[30rem] rounded-full bg-[#45D8D1]/25 blur-3xl" />
           <div className="absolute -left-28 bottom-[-10rem] h-80 w-80 rounded-full bg-[#6A67E4]/25 blur-3xl" />

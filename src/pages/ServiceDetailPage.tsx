@@ -38,6 +38,15 @@ const ServiceDetailPage = () => {
   const isMathematicsComputerLab = 
     service.slug === "mathematics-computer-lab";
 
+  const isLibrarySetup =
+    service.slug === "library-setup";
+
+  const isFireHydrantSupport =
+    service.slug === "fire-hydrant-line-support";
+
+  const isIndustrialLabSupport =
+    service.slug === "industrial-lab-support";
+
 const heroEyebrow = isSchoolCollegeLab
   ? "Educational Laboratory Solutions"
   : isChemistryLab
@@ -52,7 +61,13 @@ const heroEyebrow = isSchoolCollegeLab
             ? "STEM, Robotics & AI Learning Spaces"
             : isMathematicsComputerLab
               ? "Mathematics & Computer Learning Spaces"
-              : "Service";
+              : isLibrarySetup
+                ? "Library Planning & Learning Spaces"
+                : isFireHydrantSupport
+                  ? "Fire Safety Infrastructure Support"
+                  : isIndustrialLabSupport
+                    ? "Industrial Laboratory Solutions"
+                    : "Service";
 
 const heroTone = isStudentPractical
   ? "dark"
@@ -66,9 +81,15 @@ const heroTone = isStudentPractical
           ? "composite"
           : isChemicalMicrobiologyLab
             ? "microbiology"
-            : isStemRoboticsAiLab || isMathematicsComputerLab
-              ? "technology"
-              : "light";
+            : isFireHydrantSupport
+              ? "composite"
+              : isIndustrialLabSupport
+                ? "composite"
+                : isStemRoboticsAiLab ||
+                    isMathematicsComputerLab ||
+                    isLibrarySetup
+                  ? "technology"
+                  : "light";
 
 const sectionTitle = isStudentPractical
   ? "How the practical sessions help"
@@ -86,7 +107,13 @@ const sectionTitle = isStudentPractical
               ? "What the STEM, robotics and AI lab setup includes"
               : isMathematicsComputerLab
                 ? "What the mathematics and computer lab setup includes"
-                : "What this service covers";
+                : isLibrarySetup
+                  ? "What the library setup includes"
+                  : isFireHydrantSupport
+                    ? "What the fire hydrant line support covers"
+                    : isIndustrialLabSupport
+                      ? "What the industrial laboratory support includes"
+                      : "What this service covers";
 
 const scopeTitle = isStudentPractical
   ? "Sessions are planned around the learner and experiment goals"
@@ -104,7 +131,13 @@ const scopeTitle = isStudentPractical
               ? "The lab is planned around projects, collaboration and future expansion"
               : isMathematicsComputerLab
                 ? "The space is planned around focused learning, digital access and easy supervision"
-                : "Scope is finalised after a requirement discussion";
+                : isLibrarySetup
+                  ? "The library is planned around access, comfort and organised circulation"
+                  : isFireHydrantSupport
+                    ? "Technical scope is confirmed with suitable execution partners"
+                    : isIndustrialLabSupport
+                      ? "Every industrial laboratory is planned around its workflow and operating needs"
+                      : "Scope is finalised after a requirement discussion";
 
 const scopeDescription = isStudentPractical
   ? "The subject, learner level, group size, experiment plan and available equipment are discussed before the session. This helps Rashi Labs recommend a practical format that is focused, safe and suitable for the students."
@@ -122,7 +155,13 @@ const scopeDescription = isStudentPractical
               ? "The final layout depends on the available space, learner level, number of students, project activities, computers, robotics kits, electronics, tools, storage and demonstration requirements. Rashi Labs reviews these details before planning a flexible learning environment."
               : isMathematicsComputerLab
                 ? "The final layout depends on the available room, number of students, computers, mathematics activities, teaching methods, electrical points, networking and storage requirements. These details are reviewed before planning the furniture and workstation arrangement."
-                : "The exact equipment, layout, session plan, utilities and implementation support depend on the available space and intended use. Share the requirement for a practical recommendation.";
+                : isLibrarySetup
+                  ? "The final arrangement depends on the available floor area, expected users, book collection, shelving capacity, reading activities, storage and circulation needs. Rashi Labs reviews these details before recommending the furniture and layout."
+                  : isFireHydrantSupport
+                    ? "Fire hydrant line requirements depend on the site layout, water source, pump arrangement, pipe routing, hydrant points and applicable technical requirements. Rashi Labs coordinates these details with suitable technical partners before the execution scope is finalised."
+                    : isIndustrialLabSupport
+                      ? "The final arrangement depends on the available space, testing workflow, number of users, instruments, utilities, storage and maintenance requirements. Rashi Labs reviews these details before recommending workstation, equipment-placement and improvement support."
+                      : "The exact equipment, layout, session plan, utilities and implementation support depend on the available space and intended use. Share the requirement for a practical recommendation.";
 
 const discussionTitle = isStudentPractical
   ? "Plan a practical session."
@@ -140,7 +179,13 @@ const discussionTitle = isStudentPractical
               ? "Plan your STEM, robotics or AI lab."
               : isMathematicsComputerLab
                 ? "Plan your mathematics or computer laboratory."
-                : "Tell us what you are planning.";
+                : isLibrarySetup
+                  ? "Plan your library space."
+                  : isFireHydrantSupport
+                    ? "Discuss your fire hydrant line requirement."
+                    : isIndustrialLabSupport
+                      ? "Plan or improve your industrial laboratory."
+                      : "Tell us what you are planning.";
 
 const discussionDescription = isStudentPractical
   ? "Share the subject, learner level, number of students and preferred session timing through WhatsApp."
@@ -158,7 +203,13 @@ const discussionDescription = isStudentPractical
               ? "Share the available space, learner level, student capacity, planned activities, equipment and technology requirements through WhatsApp."
               : isMathematicsComputerLab
                 ? "Share the available space, student capacity, number of computers, mathematics activities, power, networking and storage requirements through WhatsApp."
-                : "Share the location, type of lab, number of users and expected requirement through WhatsApp.";
+                : isLibrarySetup
+                  ? "Share the available space, expected users, book collection, shelving, reading-area and storage requirements through WhatsApp."
+                  : isFireHydrantSupport
+                    ? "Share the site type, location, available drawings, expected hydrant points and existing fire-safety infrastructure through WhatsApp."
+                    : isIndustrialLabSupport
+                      ? "Share the available space, testing activities, number of users, instruments, storage, utilities and improvement requirements through WhatsApp."
+                      : "Share the location, type of lab, number of users and expected requirement through WhatsApp.";
   return (
     <>
       <PageHero
@@ -367,6 +418,66 @@ const discussionDescription = isStudentPractical
 
                       <div className="mt-1.5 max-w-2xl font-display text-xl font-extrabold text-white sm:text-2xl">
                         Organised learning spaces for problem-solving, digital instruction and computer practice.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : isLibrarySetup ? (
+                <div className="overflow-hidden rounded-4xl border border-line bg-mist p-3 shadow-card sm:p-4">
+                  <div className="group relative aspect-[16/10] overflow-hidden rounded-[1.6rem] bg-canvas">
+                    <img
+                      src="/images/gallery/original/organised_storage.jpeg"
+                      alt="Organised library with shelving, storage and reading areas"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                    />
+
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#07152E]/95 via-[#07152E]/50 to-transparent px-6 pb-5 pt-24 sm:px-8 sm:pb-7">
+                      <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange">
+                        Library planning & setup
+                      </div>
+
+                      <div className="mt-1.5 max-w-2xl font-display text-xl font-extrabold text-white sm:text-2xl">
+                        Organised spaces for reading, learning, storage and easy access.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : isFireHydrantSupport ? (
+                <div className="overflow-hidden rounded-4xl border border-line bg-mist p-3 shadow-card sm:p-4">
+                  <div className="group relative aspect-[16/10] overflow-hidden rounded-[1.6rem] bg-canvas">
+                    <img
+                      src="/images/gallery/original/fire_hydrant_support.jpeg"
+                      alt="Fire hydrant pipeline and facility fire-safety support"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                    />
+
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#06182F]/95 via-[#06182F]/50 to-transparent px-6 pb-5 pt-24 sm:px-8 sm:pb-7">
+                      <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange">
+                        Fire hydrant line support
+                      </div>
+
+                      <div className="mt-1.5 max-w-2xl font-display text-xl font-extrabold text-white sm:text-2xl">
+                        Coordinated planning for pipe routes, hydrant points and facility integration.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : isIndustrialLabSupport ? (
+                <div className="overflow-hidden rounded-4xl border border-line bg-mist p-3 shadow-card sm:p-4">
+                  <div className="group relative aspect-[16/10] overflow-hidden rounded-[1.6rem] bg-canvas">
+                    <img
+                      src="/images/gallery/original/composite_lab.jpeg"
+                      alt="Compact industrial laboratory with organised workstations, equipment and storage"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.03]"
+                    />
+
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#06182F]/95 via-[#06182F]/50 to-transparent px-6 pb-5 pt-24 sm:px-8 sm:pb-7">
+                      <div className="text-xs font-bold uppercase tracking-[0.16em] text-orange">
+                        Industrial laboratory support
+                      </div>
+
+                      <div className="mt-1.5 max-w-2xl font-display text-xl font-extrabold text-white sm:text-2xl">
+                        Practical workspaces for testing, equipment access and efficient daily operation.
                       </div>
                     </div>
                   </div>

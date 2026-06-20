@@ -38,6 +38,7 @@ const GalleryPage = () => {
         eyebrow="Gallery"
         title="Laboratory spaces designed for practical learning and scientific work."
         description="Explore laboratory layouts, equipment arrangements and learning environments that reflect the solutions supported by Rashi Labs."
+        tone="dark"
       />
 
       <section className="section-space bg-white">

@@ -30,6 +30,7 @@ const ContactPage = () => {
         eyebrow="Contact"
         title="Share your laboratory or practical-learning requirement."
         description="Call, email, visit or send the details through WhatsApp. Rashi Labs will review the requirement and help with the next step."
+        tone="dark"
       />
 
       <section className="section-space bg-white">
@@ -87,7 +88,6 @@ const ContactPage = () => {
               <h2 className="mt-5 font-display text-xl font-extrabold text-ink">Business information</h2>
               <div className="mt-2 space-y-2 text-sm text-slate-600">
                 <p><strong className="text-ink">Established:</strong> {business.establishedYear}</p>
-                <p><strong className="text-ink">Association:</strong> {business.association}</p>
                 <p><strong className="text-ink">GSTIN:</strong> {business.gst}</p>
               </div>
             </div>

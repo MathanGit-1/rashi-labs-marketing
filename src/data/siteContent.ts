@@ -1,5 +1,4 @@
 import {
-  Atom,
   Beaker,
   BookOpenCheck,
   Bot,
@@ -17,6 +16,7 @@ export const business = {
   tagline: "Complete Laboratory Solutions",
   establishedYear: 2026,
   email: "rashilabsbengaluru@gmail.com",
+  association: "No association yet",
   phoneDisplay: "+91 80883 82683",
   phoneHref: "+918088382683",
   whatsappUrl: "https://wa.me/918088382683",

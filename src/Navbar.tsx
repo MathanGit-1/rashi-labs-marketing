@@ -13,12 +13,14 @@ const navItems = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
     setMobileOpen(false);
     setServicesOpen(false);
+    setDesktopServicesOpen(false);
   }, [location.pathname]);
 
   useEffect(() => {
@@ -93,23 +95,41 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <div className="group relative">
+          <div
+            className="relative"
+            onMouseEnter={() => setDesktopServicesOpen(true)}
+            onMouseLeave={() => setDesktopServicesOpen(false)}
+          >
             <NavLink
               to="/services"
+              onClick={() => setDesktopServicesOpen(false)}
               className={({ isActive }) =>
                 `nav-link flex items-center gap-1 ${isActive ? "nav-link-active" : ""}`
               }
             >
               Services
-              <ChevronDown size={15} className="transition group-hover:rotate-180" />
+              <ChevronDown
+                size={15}
+                className={`transition ${desktopServicesOpen ? "rotate-180" : ""}`}
+              />
             </NavLink>
-            <div className="pointer-events-none absolute left-1/2 top-full w-[860px] max-w-[calc(100vw-3rem)] -translate-x-1/2 translate-y-3 pt-4 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:opacity-100">
+            <div
+              className={`absolute left-1/2 top-full w-[860px] max-w-[calc(100vw-3rem)] -translate-x-1/2 pt-4 transition duration-200 ${
+                desktopServicesOpen
+                  ? "pointer-events-auto translate-y-0 opacity-100"
+                  : "pointer-events-none translate-y-3 opacity-0"
+              }`}
+            >
               <div className="rounded-3xl border border-line bg-white p-5 shadow-matte">
                 <div className="mb-3 flex items-center justify-between px-2">
                   <span className="text-[11px] font-bold uppercase tracking-[0.18em] text-slate-400">
                     Laboratory services
                   </span>
-                  <Link to="/services" className="text-xs font-bold text-teal-dark hover:text-ink">
+                  <Link
+                    to="/services"
+                    onClick={() => setDesktopServicesOpen(false)}
+                    className="text-xs font-bold text-teal-dark hover:text-ink"
+                  >
                     View all services
                   </Link>
                 </div>
@@ -120,6 +140,7 @@ const Navbar = () => {
                       <Link
                         key={service.slug}
                         to={`/services/${service.slug}`}
+                        onClick={() => setDesktopServicesOpen(false)}
                         className="flex items-center gap-3 rounded-2xl p-3 transition hover:bg-canvas"
                       >
                         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-mist text-teal-dark">

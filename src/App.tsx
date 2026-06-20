@@ -27,6 +27,21 @@ const reveal = {
   transition: { duration: 0.55 },
 };
 
+const homeGalleryItems = [
+  {
+    ...galleryItems[0],
+    src: "/images/gallery/original/chemistry_lab.jpeg",
+  },
+  {
+    ...galleryItems[1],
+    src: "/images/gallery/original/guided_practical.jpeg",
+  },
+  {
+    ...galleryItems[2],
+    src: "/images/gallery/original/composite_lab.jpeg",
+  },
+];
+
 const App = () => {
   return (
     <>
@@ -365,7 +380,7 @@ const App = () => {
             </Link>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {galleryItems.slice(0, 3).map((item) => (
+            {homeGalleryItems.map((item) => (
               <Link key={item.title} to="/gallery" className="gallery-card group">
                 <img src={item.src} alt={item.title} className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]" />
                 <div className="gallery-overlay">

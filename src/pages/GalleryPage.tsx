@@ -36,21 +36,25 @@ const galleryPageItems = [
 const galleryVideoItems = [
   {
     src: "/videos/home_video.mp4",
+    poster: "/videos/home_video_poster.jpeg",
     category: "Laboratory walkthrough",
     title: "Inside a completed laboratory space",
   },
   {
     src: "/videos/video_1.mp4",
+    poster: "/videos/video_1_poster.jpeg",
     category: "Laboratory environment",
     title: "Practical learning workspace",
   },
   {
     src: "/videos/video_3.mp4",
+    poster: "/videos/video_3_poster.jpeg",
     category: "Laboratory setup",
     title: "Laboratory layout and setup",
   },
   {
     src: "/videos/video_4.mp4",
+    poster: "/videos/video_4_poster.jpeg",
     category: "Laboratory facilities",
     title: "Equipment and laboratory overview",
   },
@@ -138,10 +142,11 @@ const GalleryPage = () => {
                 className="overflow-hidden rounded-2xl border border-line bg-white shadow-[0_14px_35px_rgba(13,43,90,0.08)]"
               >
                 <div className="relative aspect-video overflow-hidden bg-ink">
-                  <video
+                <video
                     ref={(element) => {
                       videoRefs.current[video.src] = element;
                     }}
+                    poster={video.poster}
                     src={video.src}
                     className="h-full w-full object-cover brightness-[1.08] outline-none"
                     controls={Boolean(startedVideos[video.src])}

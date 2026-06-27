@@ -241,12 +241,13 @@ const App = () => {
 
             <div className="relative mt-10 sm:mt-12 lg:mt-14">
               <div className="relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-ink shadow-[0_35px_90px_rgba(13,43,90,0.22)] sm:rounded-[2rem]">
-                <video
+              <video
                   ref={homeVideoRef}
+                  poster="/videos/home_video_poster.jpeg"
                   src="/videos/home_video.mp4"
                   className="block aspect-video w-full object-cover brightness-[1.12] contrast-[1.02] outline-none focus:outline-none"
                   playsInline
-                  preload="auto"
+                  preload="metadata"
                   controls={homeVideoHasStarted}
                   controlsList="nodownload noplaybackrate"
                   onPlay={() => setHomeVideoHasStarted(true)}

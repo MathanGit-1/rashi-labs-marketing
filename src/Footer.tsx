@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { business, services } from "./data/siteContent";
 
 const Footer = () => {
-  const year = new Date().getFullYear();
+  const year = 2022;
 
   return (
     <footer className="border-t border-line bg-[#F2F7F7]">

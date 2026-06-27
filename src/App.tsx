@@ -6,8 +6,9 @@ import {
   FlaskConical,
   MapPin,
   Microscope,
+  Play,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import CallToAction from "./components/CallToAction";
 import HeroSlider from "./components/HeroSlider";
@@ -62,6 +63,8 @@ const aboutImages = [
 ];
 
 const App = () => {
+  const homeVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [homeVideoHasStarted, setHomeVideoHasStarted] = useState(false);
   const [aboutImageIndex, setAboutImageIndex] = useState(0);
   useEffect(() => {
     const interval = window.setInterval(() => {
@@ -207,6 +210,77 @@ const App = () => {
         </div>
       </section>
 
+      <section className="relative overflow-hidden border-b border-line bg-[#F6FAFB] py-16 sm:py-20 lg:py-24">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(54,169,181,0.10),transparent_42%),radial-gradient(circle_at_top_right,rgba(247,148,30,0.08),transparent_38%)]" />
+
+        <div className="site-container relative">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55 }}
+            className="mx-auto max-w-[1120px]"
+          >
+            <div className="mx-auto max-w-2xl text-center">
+              <div className="inline-flex items-center rounded-full border border-teal/20 bg-white px-4 py-2 text-[11px] font-extrabold uppercase tracking-[0.18em] text-teal-dark shadow-[0_8px_22px_rgba(13,43,90,0.05)]">
+                Rashi Labs in action
+              </div>
+
+              <h2 className="mt-6 font-display text-3xl font-extrabold leading-tight text-ink sm:text-4xl lg:text-[2.7rem]">
+                See practical laboratory learning and setup{" "}
+                <span className="bg-gradient-to-r from-teal-dark to-orange bg-clip-text text-transparent">
+                  in action.
+                </span>
+              </h2>
+
+              <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-slate-600">
+                A short look at how Rashi Labs supports hands-on learning and
+                well-organised laboratory spaces.
+              </p>
+            </div>
+
+            <div className="relative mt-10 sm:mt-12 lg:mt-14">
+              <div className="relative overflow-hidden rounded-[1.75rem] border border-white/80 bg-ink shadow-[0_35px_90px_rgba(13,43,90,0.22)] sm:rounded-[2rem]">
+                <video
+                  ref={homeVideoRef}
+                  src="/videos/home_video.mp4"
+                  className="block aspect-video w-full object-cover brightness-[1.12] contrast-[1.02] outline-none focus:outline-none"
+                  playsInline
+                  preload="auto"
+                  controls={homeVideoHasStarted}
+                  controlsList="nodownload noplaybackrate"
+                  onPlay={() => setHomeVideoHasStarted(true)}
+                />
+
+                {!homeVideoHasStarted && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-gradient-to-b from-ink/5 via-ink/10 to-ink/20" />
+
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const video = homeVideoRef.current;
+
+                        if (!video) return;
+
+                        void video.play();
+                      }}
+                      className="relative flex h-16 w-16 items-center justify-center rounded-full border border-white/70 bg-white/95 text-ink shadow-[0_18px_45px_rgba(13,43,90,0.28)] transition duration-300 hover:scale-105 hover:bg-white focus:outline-none focus:ring-4 focus:ring-teal/25 sm:h-20 sm:w-20"
+                      aria-label="Play Rashi Labs video"
+                    >
+                      <Play
+                        size={30}
+                        className="ml-1 fill-current sm:h-9 sm:w-9"
+                      />
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="section-space bg-white">
         <div className="site-container grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:gap-10">
           <motion.div {...reveal} className="relative w-full">
@@ -273,7 +347,7 @@ const App = () => {
             <SectionHeading
               eyebrow="About Rashi Labs"
               title="Making laboratory learning more approachable and useful."
-              description="Established in 2026, Rashi Labs is a Bengaluru-based laboratory solutions provider. We support student practical learning and coordinate the supply and setup of educational, technology and smaller industrial laboratory spaces."
+              description="Established in 2022, Rashi Labs is a Bengaluru-based laboratory solutions provider. We support student practical learning and coordinate the supply and setup of educational, technology and smaller industrial laboratory spaces."
             />
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">

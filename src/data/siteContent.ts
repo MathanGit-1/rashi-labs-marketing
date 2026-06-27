@@ -14,8 +14,8 @@ import {
 export const business = {
   name: "Rashi Labs",
   tagline: "Complete Laboratory Solutions",
-  establishedYear: 2026,
-  email: "rashilabsbengaluru@gmail.com",
+  establishedYear: 2022,
+  email: "mail4rashilabs@gmail.com",
   association: "No association yet",
   phoneDisplay: "+91 80883 82683",
   phoneHref: "+918088382683",
